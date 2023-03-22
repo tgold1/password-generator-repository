@@ -1,4 +1,9 @@
 // Assignment Code
+function generatePassword () {
+  
+
+return ;
+}
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
