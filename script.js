@@ -6,45 +6,50 @@ var Numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 function generatePassword () { 
   var numberofcharacters = window.prompt("How many characters would you like your password to be?")
-  if (numberofcharacters < 8 == true) window.alert("Character length must be between 8-128 characters.") 
-  else if(numberofcharacters >128 == true) window.alert ("Character length must be between 8-128 characters.")
+  if (numberofcharacters < 8 == true) {window.alert("Character length must be between 8-128 characters."); return generatePassword();} 
+  else if(numberofcharacters >128 == true) {window.alert ("Character length must be between 8-128 characters."); return generatePassword();}
   
-  else
+  else {
  
 
-  window.confirm("Would you like to use special characters?");
-  window.confirm("Would you like to use Uppercase letters?" );
-  window.confirm("Would you like to use Lowercase letters?");
-  window.confirm("Would you like to use Numbers?");
+  var spcharacters = window.confirm("Would you like to use special characters?");
+  var upcaseletter = window.confirm("Would you like to use Uppercase letters?" );
+  var locaseletter = window.confirm("Would you like to use Lowercase letters?");
+  var numrs =  window.confirm("Would you like to use Numbers?");
 
-  return
+  
 
-if (specialcharacters == true) {
-  specialcharacters.concat (specialcharacters)
+var Newarray = [];
 
-}
-
-if (Uppercaseletters == true) {
-  Uppercaseletters.concat (Uppercaseletters)
-}
-
-if (Lowercaseletters == true) {
-  Lowercaseletters.concat (Lowercaseletters)
-}
-
-if (Numbers == true)  {
-  Numbers.concat (Numbers)
-}
-
-var index = math.floor(math.random () * password.length)
-
-for (let i = 0; i< password.length; i++) {
+if (spcharacters == true) {
+  Newarray = Newarray.concat(specialcharacters)
 
 }
 
+if (upcaseletter == true) {
+  Newarray = Newarray.concat(Uppercaseletters)
+}
 
+if (locaseletter == true) {
+  Newarray = Newarray.concat(Lowercaseletters)
+}
+
+if (numrs == true)  {
+  Newarray = Newarray.concat(Numbers)
+}
+
+var randompassword = "";
+for (let i = 0; i< numberofcharacters; i++) {
+
+  var index = Math.floor(Math.random () * Newarray.length)
+
+  randompassword = randompassword + Newarray[index];
+}
+
+return randompassword;
  
-  return ;
+  
+}
 }
 var generateBtn = document.querySelector("#generate");
 
